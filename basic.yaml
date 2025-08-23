@@ -1,14 +1,14 @@
 binary_sensor:
   - platform: gpio
     pin: 
-      number: GPIO27
+      number: D27
       mode:
         input: true
         pullup: true
     name: "WaterCop Light A"
   - platform: gpio
     pin: 
-      number: GPIO26
+      number: D26
       mode:
         input: true
         pullup: true
@@ -17,7 +17,7 @@ binary_sensor:
 switch:
   - platform: gpio
     pin: 
-      number: GPIO25
+      number: D25
       mode: 
         output: true
     name: "WaterCop Open Switch"
@@ -28,7 +28,7 @@ switch:
 
   - platform: gpio
     pin: 
-      number: GPIO33
+      number: D33
       mode: 
         output: true
     name: "WaterCop Close Switch"
