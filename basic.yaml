@@ -6,6 +6,9 @@ binary_sensor:
         input: true
         pullup: true
     name: "WaterCop Light A"
+    on_state:
+      then:
+        - logger.log: "WaterCop Light A state changed!"
   - platform: gpio
     pin: 
       number: D26
@@ -13,6 +16,9 @@ binary_sensor:
         input: true
         pullup: true
     name: "WaterCop Light B"
+    on_state:
+      then:
+        - logger.log: "WaterCop Light B state changed!"
 
 switch:
   - platform: gpio
