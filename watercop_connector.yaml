@@ -1,7 +1,7 @@
 binary_sensor:
   - platform: gpio
     pin: 
-      number: D27
+      number: GPIO27
       mode:
         input: true
         pulldown: true
@@ -24,7 +24,7 @@ binary_sensor:
               id(input_switch) = false;
   - platform: gpio
     pin: 
-      number: D26
+      number: GPIO26
       mode:
         input: true
         pulldown: true
@@ -49,14 +49,14 @@ binary_sensor:
 output:
   - platform: gpio
     pin: 
-      number: D25
+      number: GPIO25
       mode: 
         output: true
     id: open_output
 
   - platform: gpio
     pin: 
-      number: D33
+      number: GPIO33
       mode: 
         output: true
     id: close_output
