@@ -75,7 +75,7 @@ switch:
     turn_on_action:
       - if:
           condition:
-            lambda: 'return !!id(input_switch);'
+            lambda: 'return !id(input_switch);'
           then:
             - logger.log: "User requested OPEN"
             - output.turn_on: open_output
