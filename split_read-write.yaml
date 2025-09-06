@@ -1,13 +1,14 @@
-output:
+swithc:
   - platform: gpio
     pin: 
       number: GPIO25
       mode: 
         output: true
     id: open_switch
+    internal: true
     on_turn_on:
     - delay: 1000ms
-    - output.turn_off: open_switch
+    - switch.turn_off: open_switch
 
   - platform: gpio
     pin: 
@@ -15,9 +16,10 @@ output:
       mode: 
         output: true
     id: close_switch
+    internal: true
     on_turn_on:
     - delay: 1000ms
-    - output.turn_off: close_switch
+    - switch.turn_off: close_switch
 
 button:
   - platform: template
@@ -27,9 +29,9 @@ button:
         condition:
           lambda: 'return id(watercop_state).state;'
         then:
-          - output.turn_on: close_switch
+          - switch.turn_on: close_switch
         else:
-          - output.turn_on: open_switch
+          - switch.turn_on: open_switch
 
 binary_sensor:
   - platform: gpio
