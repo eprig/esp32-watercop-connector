@@ -1,0 +1,34 @@
+output:
+  - platform: gpio
+    pin: 
+      number: D25
+      mode: 
+        output: true
+    id: open_switch
+
+  - platform: gpio
+    pin: 
+      number: D33
+      mode: 
+        output: true
+    id: close_switch
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D27
+      mode:
+        input: true
+        pulldown: true
+    internal: true
+    id: open_light
+  
+  - platform: gpio
+    pin:
+      number: D27
+      mode:
+        input: true
+        pulldown: true
+    internal: true
+    id: close_light
+  
