@@ -1,22 +1,40 @@
 output:
   - platform: gpio
     pin: 
-      number: D25
+      number: GPIO25
       mode: 
         output: true
     id: open_switch
+    on_turn_on:
+    - delay: 1000ms
+    - output.turn_off: open_switch
 
   - platform: gpio
     pin: 
-      number: D33
+      number: GPIO33
       mode: 
         output: true
     id: close_switch
+    on_turn_on:
+    - delay: 1000ms
+    - output.turn_off: close_switch
+
+button:
+  - platform: template
+    name: "Toggle Output"
+    on_press:
+      if:
+        condition:
+          lambda: 'return id(watercop_state).state;'
+        then:
+          - output.turn_on: close_switch
+        else:
+          - output.turn_on: open_switch
 
 binary_sensor:
   - platform: gpio
     pin:
-      number: D27
+      number: GPIO26
       mode:
         input: true
         pulldown: true
@@ -25,10 +43,25 @@ binary_sensor:
   
   - platform: gpio
     pin:
-      number: D27
+      number: GPIO27
       mode:
         input: true
         pulldown: true
     internal: true
     id: close_light
+  
+  - platform: template
+    id: watercop_state
+    name: "WaterCop State"
+    lambda: |-
+      if (id(open_light).state && id(close_light).state) {
+        return {};
+      } if else (id(open_light).state) {
+        return true;
+      } else if (id(close_light).state) {
+        return false;
+      } else {
+        return {};
+      }
+
   
