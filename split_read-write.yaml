@@ -1,7 +1,7 @@
 switch:
   - platform: gpio
     pin: 
-      number: GPIO25
+      number: GPIO26
       mode: 
         output: true
     id: open_switch
@@ -13,7 +13,7 @@ switch:
 
   - platform: gpio
     pin: 
-      number: GPIO33
+      number: GPIO27
       mode: 
         output: true
     id: close_switch
@@ -39,7 +39,7 @@ button:
 binary_sensor:
   - platform: gpio
     pin:
-      number: GPIO26
+      number: GPIO25
       mode:
         input: true
         pulldown: true
@@ -49,7 +49,7 @@ binary_sensor:
   
   - platform: gpio
     pin:
-      number: GPIO27
+      number: GPIO33
       mode:
         input: true
         pulldown: true
