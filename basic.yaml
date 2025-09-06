@@ -1,7 +1,7 @@
 binary_sensor:
   - platform: gpio
     pin: 
-      number: GPIO33
+      number: GPIO25
       mode:
         input: true
         pulldown: true
@@ -11,7 +11,7 @@ binary_sensor:
         - logger.log: "WaterCop Light A state changed!"
   - platform: gpio
     pin: 
-      number: GPIO25
+      number: GPIO33
       mode:
         input: true
         pulldown: true
