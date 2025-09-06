@@ -61,9 +61,7 @@ binary_sensor:
     id: watercop_state
     name: "WaterCop State"
     lambda: |-
-      if (id(open_light).state && id(close_light).state) {
-        return {};
-      } else if (id(open_light).state) {
+      if (id(open_light).state) {
         return true;
       } else if (id(close_light).state) {
         return false;
