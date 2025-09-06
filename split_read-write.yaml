@@ -5,6 +5,7 @@ swithc:
       mode: 
         output: true
     id: open_switch
+    name: "WaterCop Open Switch"
     internal: true
     on_turn_on:
     - delay: 1000ms
@@ -16,6 +17,7 @@ swithc:
       mode: 
         output: true
     id: close_switch
+    name: "WaterCop Close Switch"
     internal: true
     on_turn_on:
     - delay: 1000ms
@@ -24,6 +26,7 @@ swithc:
 button:
   - platform: template
     name: "Toggle Output"
+    id: toggle_button
     on_press:
       if:
         condition:
@@ -42,6 +45,7 @@ binary_sensor:
         pulldown: true
     internal: true
     id: open_light
+    name: "WaterCop Open Light"
   
   - platform: gpio
     pin:
@@ -51,6 +55,7 @@ binary_sensor:
         pulldown: true
     internal: true
     id: close_light
+    name: "WaterCop Close Light"
   
   - platform: template
     id: watercop_state
