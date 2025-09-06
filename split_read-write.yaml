@@ -63,7 +63,7 @@ binary_sensor:
     lambda: |-
       if (id(open_light).state && id(close_light).state) {
         return {};
-      } if else (id(open_light).state) {
+      } else if (id(open_light).state) {
         return true;
       } else if (id(close_light).state) {
         return false;
