@@ -6,7 +6,7 @@ switch:
         output: true
     id: open_switch
     name: "WaterCop Open Switch"
-    internal: true
+    internal: false
     on_turn_on:
     - delay: 1000ms
     - switch.turn_off: open_switch
@@ -18,7 +18,7 @@ switch:
         output: true
     id: close_switch
     name: "WaterCop Close Switch"
-    internal: true
+    internal: false
     on_turn_on:
     - delay: 1000ms
     - switch.turn_off: close_switch
@@ -43,7 +43,7 @@ binary_sensor:
       mode:
         input: true
         pulldown: true
-    internal: true
+    internal: false
     id: open_light
     name: "WaterCop Open Light"
   
@@ -53,7 +53,7 @@ binary_sensor:
       mode:
         input: true
         pulldown: true
-    internal: true
+    internal: false
     id: close_light
     name: "WaterCop Close Light"
   
