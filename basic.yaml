@@ -4,7 +4,7 @@ binary_sensor:
       number: GPIO33
       mode:
         input: true
-        pullup: true
+        pulldown: true
     name: "WaterCop Open Light"
     on_state:
       then:
@@ -14,7 +14,7 @@ binary_sensor:
       number: GPIO25
       mode:
         input: true
-        pullup: true
+        pulldown: true
     name: "WaterCop Closed Light"
     on_state:
       then:
